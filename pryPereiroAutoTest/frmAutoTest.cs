@@ -24,18 +24,25 @@ namespace pryPereiroAutoTest
             this.Close();
         }
         int Indice = 0;
+        string CantDominio;
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (Indice < vecTurno.Length)
             {
                 vecTurno[Indice] = Convert.ToInt32(txtNroTurno.Text);
-                Indice++;
-                txtNroTurno.Text = "";
-                txtDominio.Text = "";
-                nudAñoFabricacion.Value = 2000;
-                txtTitular.Text = "";
+
+                if (txtDominio.Text.Length == 6)
+                {
+                    CantDominio = txtDominio.Text;
+                }
 
             }
+
+            Indice++;
+            txtNroTurno.Text = "";
+            txtDominio.Text = "";
+            nudAñoFabricacion.Value = 2000;
+            txtTitular.Text = "";
 
 
 
@@ -105,8 +112,16 @@ namespace pryPereiroAutoTest
 
             // mostrar el resultado
 
-         
 
+            lblCantDominioCon6Caracteres.Text = CantDominio;
+
+
+
+
+        }
+
+        private void lblCantDominioCon6Caracteres_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -39,6 +39,9 @@
             nudAñoFabricacion = new NumericUpDown();
             lblRegistro = new Label();
             grpConsulta = new GroupBox();
+            lblCantDominioCon6Caracteres = new Label();
+            lblMasAntiguo = new Label();
+            lblCantTurno = new Label();
             lblCantDominio6Caracteres = new Label();
             lblAñoMasAntiguo = new Label();
             lblCantTurnos = new Label();
@@ -46,9 +49,6 @@
             btnRegistrar = new Button();
             btnSalir = new Button();
             btnConsultar = new Button();
-            lblCantTurno = new Label();
-            lblMasAntiguo = new Label();
-            lblCantDominioCon6Caracteres = new Label();
             grpResgistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAñoFabricacion).BeginInit();
             grpConsulta.SuspendLayout();
@@ -171,6 +171,36 @@
             grpConsulta.TabIndex = 5;
             grpConsulta.TabStop = false;
             // 
+            // lblCantDominioCon6Caracteres
+            // 
+            lblCantDominioCon6Caracteres.BackColor = SystemColors.Control;
+            lblCantDominioCon6Caracteres.Location = new Point(390, 156);
+            lblCantDominioCon6Caracteres.Name = "lblCantDominioCon6Caracteres";
+            lblCantDominioCon6Caracteres.Size = new Size(110, 25);
+            lblCantDominioCon6Caracteres.TabIndex = 8;
+            lblCantDominioCon6Caracteres.Text = "- - - - - - - -";
+            lblCantDominioCon6Caracteres.Click += lblCantDominioCon6Caracteres_Click;
+            // 
+            // lblMasAntiguo
+            // 
+            lblMasAntiguo.AutoSize = true;
+            lblMasAntiguo.BackColor = SystemColors.Control;
+            lblMasAntiguo.Location = new Point(428, 89);
+            lblMasAntiguo.Name = "lblMasAntiguo";
+            lblMasAntiguo.Size = new Size(72, 25);
+            lblMasAntiguo.TabIndex = 7;
+            lblMasAntiguo.Text = "- - - - - ";
+            // 
+            // lblCantTurno
+            // 
+            lblCantTurno.AutoSize = true;
+            lblCantTurno.BackColor = SystemColors.Control;
+            lblCantTurno.Location = new Point(433, 30);
+            lblCantTurno.Name = "lblCantTurno";
+            lblCantTurno.Size = new Size(67, 25);
+            lblCantTurno.TabIndex = 6;
+            lblCantTurno.Text = "- - - - -";
+            // 
             // lblCantDominio6Caracteres
             // 
             lblCantDominio6Caracteres.AutoSize = true;
@@ -238,36 +268,6 @@
             btnConsultar.UseVisualStyleBackColor = true;
             btnConsultar.Click += btnConsultar_Click;
             // 
-            // lblCantTurno
-            // 
-            lblCantTurno.AutoSize = true;
-            lblCantTurno.BackColor = SystemColors.Control;
-            lblCantTurno.Location = new Point(428, 30);
-            lblCantTurno.Name = "lblCantTurno";
-            lblCantTurno.Size = new Size(67, 25);
-            lblCantTurno.TabIndex = 6;
-            lblCantTurno.Text = "- - - - -";
-            // 
-            // lblMasAntiguo
-            // 
-            lblMasAntiguo.AutoSize = true;
-            lblMasAntiguo.BackColor = SystemColors.Control;
-            lblMasAntiguo.Location = new Point(428, 89);
-            lblMasAntiguo.Name = "lblMasAntiguo";
-            lblMasAntiguo.Size = new Size(72, 25);
-            lblMasAntiguo.TabIndex = 7;
-            lblMasAntiguo.Text = "- - - - - ";
-            // 
-            // lblCantDominioCon6Caracteres
-            // 
-            lblCantDominioCon6Caracteres.AutoSize = true;
-            lblCantDominioCon6Caracteres.BackColor = SystemColors.Control;
-            lblCantDominioCon6Caracteres.Location = new Point(428, 156);
-            lblCantDominioCon6Caracteres.Name = "lblCantDominioCon6Caracteres";
-            lblCantDominioCon6Caracteres.Size = new Size(72, 25);
-            lblCantDominioCon6Caracteres.TabIndex = 8;
-            lblCantDominioCon6Caracteres.Text = "- - - - - ";
-            // 
             // frmAutoTest
             // 
             AcceptButton = btnRegistrar;
@@ -275,7 +275,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             CancelButton = btnSalir;
-            ClientSize = new Size(696, 671);
+            ClientSize = new Size(696, 619);
             ControlBox = false;
             Controls.Add(btnConsultar);
             Controls.Add(btnSalir);
