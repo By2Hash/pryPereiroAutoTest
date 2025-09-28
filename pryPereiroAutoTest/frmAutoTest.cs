@@ -1,4 +1,5 @@
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace pryPereiroAutoTest
 {
@@ -9,8 +10,22 @@ namespace pryPereiroAutoTest
             InitializeComponent();
         }
 
-        int[] vecTurno = new int[50];
+        struct AutoTest
+        {
+            public int CantTurnos;
+            public string Dominio;
+            public int MasAntiguo;
+            public int DominiosCon6Caracteres;
 
+
+        }
+
+        
+
+        AutoTest[] vecConsulta = new AutoTest[50];
+        int Indice = 0;
+
+        AutoTest Consulta = new AutoTest();
 
 
         private void nudAñoFabricacion_ValueChanged(object sender, EventArgs e)
@@ -23,18 +38,24 @@ namespace pryPereiroAutoTest
         {
             this.Close();
         }
-        int Indice = 0;
-        string CantDominio;
+
+        int mayor = 2050;
+        int menor ;
+
+       
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (Indice < vecTurno.Length)
+            if (Indice < vecConsulta.Length)
             {
-                vecTurno[Indice] = Convert.ToInt32(txtNroTurno.Text);
+                Consulta.CantTurnos = txtNroTurno.TextLength;
+                Consulta.Dominio = txtDominio.Text;
+                    Consulta.MasAntiguo = (int)nudAñoFabricacion.Value;
 
-                if (txtDominio.Text.Length == 6)
+                if ((int)nudAñoFabricacion.Value < mayor)
                 {
-                    CantDominio = txtDominio.Text;
+                    menor = (int)nudAñoFabricacion.Value;
                 }
+
 
             }
 
@@ -102,18 +123,15 @@ namespace pryPereiroAutoTest
 
         }
 
-
+        
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            //En la etiqueta muestra el indice, no hace falta poner vecTurno[Indice]
             lblCantTurno.Text = Indice.ToString();
-
-            //Año mas antiguo
-
-            // mostrar el resultado
-
-
-            lblCantDominioCon6Caracteres.Text = CantDominio;
+            lblMasAntiguo.Text = menor.ToString();
+            lblCantDominioCon6Caracteres.Text = Consulta.DominiosCon6Caracteres.ToString();
+            
+          
+            
 
 
 
