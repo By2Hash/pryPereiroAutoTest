@@ -15,7 +15,7 @@ namespace pryPereiroAutoTest
             public int CantTurnos;
             public string Dominio;
             public int MasAntiguo;
-            public int DominiosCon6Caracteres;
+            
 
 
         }
@@ -41,14 +41,26 @@ namespace pryPereiroAutoTest
 
         int mayor = 2050;
         int menor ;
+        
+        int Cantidad = 0;
 
-       
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (Indice < vecConsulta.Length)
             {
                 Consulta.CantTurnos = txtNroTurno.TextLength;
-                Consulta.Dominio = txtDominio.Text;
+                
+                if (txtDominio.Text.Length <= 6)
+                {
+                    lblCantDominioCon6Caracteres.Text = "";
+                }
+               else
+                {
+                    Cantidad++;
+                }
+
+
                     Consulta.MasAntiguo = (int)nudAñoFabricacion.Value;
 
                 if ((int)nudAñoFabricacion.Value < mayor)
@@ -124,14 +136,16 @@ namespace pryPereiroAutoTest
         }
 
         
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             lblCantTurno.Text = Indice.ToString();
             lblMasAntiguo.Text = menor.ToString();
-            lblCantDominioCon6Caracteres.Text = Consulta.DominiosCon6Caracteres.ToString();
-            
-          
-            
+            lblCantDominioCon6Caracteres.Text = Cantidad.ToString();
+
+
+
+
 
 
 
